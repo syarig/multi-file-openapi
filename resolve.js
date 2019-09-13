@@ -1,4 +1,8 @@
-const chokidar = require("chokidar");
+#!/usr/bin/env node
+
+'use strict'
+
+const chokidar = require('chokidar');
 const JsonRefs = require('json-refs');
 const YAML = require('js-yaml');
 const fs = require('fs');

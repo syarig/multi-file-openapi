@@ -1,6 +1,6 @@
 {
   "name": "multi-file-openapi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Multi-file OpenAPI resolver",
   "main": "resolve.js",
   "scripts": {

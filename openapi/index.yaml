@@ -1,0 +1,13 @@
+openapi: "3.0.0"
+info:
+  $ref: ./openapi/info/index.yaml
+externalDocs:
+  $ref: ./openapi/externalDocs/index.yaml
+tags:
+  $ref: ./openapi/tags/index.yaml
+servers:
+  $ref: ./openapi/servers/index.yaml
+paths:
+  $ref: ./openapi/paths/index.yaml
+components:
+  $ref: ./openapi/components/index.yaml

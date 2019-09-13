@@ -64,7 +64,7 @@ if (!program.watch) {
 }
 
 //initialize chokidar
-const watcher = chokidar.watch(program.directory, {
+const watcher = chokidar.watch(program.watch, {
     ignored: /[\/\\]\./,
     persistent: true
 });

@@ -2,7 +2,6 @@
 
 'use strict'
 
-const chokidar = require('chokidar');
 const JsonRefs = require('json-refs');
 const YAML = require('js-yaml');
 const fs = require('fs');
@@ -54,27 +53,7 @@ program
     .version('0.0.1')
     .option('-e, --entry-point [yaml]', 'Entry point YAML', /.*.yaml$/i, './openapi/index.yaml')
     .option('-o --output [yaml]', 'Output YAML', /.*.yaml$/i, 'openapi.yaml')
-    .option('--watch [dir]', 'Watch directory by chokidar')
     .parse(process.argv);
 
-if (!program.watch) {
-    resolve(program.entryPoint, program.output);
-    console.log('YAML file resolve completed');
-    return;
-}
-
-//initialize chokidar
-const watcher = chokidar.watch(program.watch, {
-    ignored: /[\/\\]\./,
-    persistent: true
-});
-
-watcher.on('ready', function () {
-    console.log('ready watching...');
-
-    // Observe change event 
-    watcher.on('change', function (path) {
-        console.log(path + ' changed.');
-        resolve(program.entryPoint, program.output);
-    });
-});
+resolve(program.entryPoint, program.output);
+console.log('YAML file resolve completed');
